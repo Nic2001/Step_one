@@ -18,5 +18,3 @@ func main() {
 
 	fmt.Println(words)
 }
-
-// про функции пакета почитал здесь https://pkg.go.dev/strings#Fields

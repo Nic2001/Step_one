@@ -29,5 +29,3 @@ func main() {
 	array := []int{1, 2, 3, 4, 6, 10, 20, 30, 40, 50} // ОТСОРТИРОВАННЫЙ массив целых чисел
 	binarySearch(6, array)
 }
-
-//много взял отсюда https://dzen.ru/a/YkQvRcEV3CBQCAs-, https://www.golangprograms.com/golang-program-for-implementation-of-binary-search.html

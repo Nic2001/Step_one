@@ -1,5 +1,5 @@
-//Дана последовательность чисел: 2,4,6,8,10. Найти сумму их квадратов(22+32+42….)
-//с использованием конкурентных вычислений.
+// Дана последовательность чисел: 2,4,6,8,10. Найти сумму их квадратов(22+32+42….)
+// с использованием конкурентных вычислений.
 package main
 
 import (
@@ -9,15 +9,15 @@ import (
 )
 
 func main() {
-	number := []int{2, 4, 6, 8, 10}
+	numbers := []int{2, 4, 6, 8, 10}
 	var sum1, sum2, sum3 int
 
 	// можно использовать предыдущую программу, добавив суммирование
 	// с помощью группы ожидания
 	var wg sync.WaitGroup
-	wg.Add(len(number)) // заполняем счётчик горутин
+	wg.Add(len(numbers)) // заполняем счётчик горутин
 
-	for _, number := range number {
+	for _, number := range numbers {
 		go func(n int) { // анонимная горутина
 			defer wg.Done() // уменьшаем счётчик горутин
 			sum1 += Square(n)
@@ -30,7 +30,7 @@ func main() {
 	// простой вариант с задержкой временем
 	for i := 0; i < 5; i++ {
 		go func(i int) {
-			sum2 += Square(number[i])
+			sum2 += Square(numbers[i])
 		}(i)
 	}
 	time.Sleep(5 * time.Millisecond)
@@ -42,7 +42,7 @@ func main() {
 	ch := make(chan int)
 	defer close(ch)
 
-	for _, number := range number {
+	for _, number := range numbers {
 		go func(n int) {
 			ch <- n * n
 
@@ -58,5 +58,5 @@ func main() {
 }
 
 func Square(number int) int { // функция расчёта и вывода квадрата
-	return (number * number)
+	return number * number
 }

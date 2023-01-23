@@ -28,5 +28,3 @@ func main() {
 	cancel()
 
 }
-
-// https://blog.ildarkarymov.ru/posts/context-guide/ вот здесь про контекст почитал

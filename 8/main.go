@@ -23,5 +23,3 @@ func main() {
 	}
 	fmt.Println("было ", b, " стало ", string(c))
 }
-
-//почитал про функцию конвертации здесь https://stackoverflow.com/questions/13870845/converting-from-an-integer-to-its-binary-representation

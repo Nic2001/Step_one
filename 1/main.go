@@ -41,5 +41,3 @@ func main() {
 	action.fly(i)
 
 }
-
-// https://golangify.com/composition-and-forwarding здесь подсмотрел кое что

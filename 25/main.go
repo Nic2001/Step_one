@@ -16,5 +16,3 @@ func main() {
 	fmt.Println("Начало") // засечём старт программы
 	sleep(time.Second * 2)
 }
-
-// https://pkg.go.dev/time#After здесь про time.After
